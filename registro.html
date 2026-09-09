@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Iniciar Sesion | Veterinaria San Marcos </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   
+    <header>  <!-- Header Copiado -->
+        <div> 
+            <img src ="https://irp.cdn-website.com/ddaef7ae/dms3rep/multi/opt/LOGO-VETERINARIA-220w.png" alt ="Logo veterinaria" width ="50">
+            <span> Veterinaria San Marcos</span>
+        </div>
+
+        <nav> 
+            <ul> 
+                <li> <a href ="index.html">  Home </a> </li>
+                <li> <a href ="servicios.html"> Servicios </a></a></li>
+                <li> <a href ="equipo.html"> Equipo </a></li>
+                <li> <a href ="portal.html"> Portal </a></li>
+                <li> <a href ="contacto.html"> Contacto </a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <button onclick ="window.location.href='login.html'"> Iniciar Sesión </button>
+            <button onclick ="window.location.href='registro.html'"> Registrarse </button>
+        </div>
+     </header>
+
+
+    <main> <!-- Formulario Login --> 
+        <section> 
+            <div class ="login-container" style ="margin: 0 auto;">
+                <h1 style ="text-align: center; margin-bottom: 20px;"> Crear Cuenta </h1>
+                <form id ="ingresoForm">
+
+                    <div> <!-- 1. Nombre --> 
+                        <label for ="user"> Nombre Completo </label>
+                        <input type ="text" id ="user" placeholder ="Nombre completo" class ="input" required>
+                        <span id ="error-user" style ="color: red; font-size: 12px; margin-top: 2px;"></span>
+                    </div>
+
+                    <div> <!-- 2. Email-->
+                        <label for ="email"> Dirección de correo </label>
+                        <input type ="text" id ="login-psw" placeholder ="Dirección de correo" class ="input" required>
+                        <span id ="error-email" style ="color: red; font-size: 12px; margin-top: 2px;"></span>
+                    </div>
+
+                    <div> <!-- 3. Telefono --> 
+                        <label for ="phone"> Número de teléfono </label>
+                        <input type ="tel" id ="phone" placeholder ="Número de teléfono" class ="input" required>
+                        <span id ="error-user" style ="color: red; font-size: 12px; margin-top: 2px;"></span>
+                    </div>
+
+                    <div> <!-- 4. Contraseña -->
+                        <label for="password">Crea una contraseña</label>
+                        <input type="password" id="password" placeholder="Crea una contraseña" class="input">
+                        <span id="error-psw" style="color: red; font-size: 12px; margin-top: 2px;"></span>
+                    </div>
+
+                    <div> <!-- 5. Confirmar Contraseña -->
+                        <label for="confirm-psw">Confirma tu contraseña</label>
+                        <input type="password" id="confirm-psw" placeholder="Confirma tu contraseña" class="input">
+                        <span id="error-confirm" style="color: red; font-size: 12px; margin-top: 2px;"></span>
+                    </div>
+
+                    <!-- 6. Términos y condiciones -->
+                    <div class="checkbox-container" style="margin-top: 10px; margin-bottom: 15px;">
+                        <input type="checkbox" id="terms" name="terminos" required>
+                        <label for="terms"> Acepto los <a href="#">términos de uso</a></label>  
+                    </div>
+
+                    <!-- 7. Botón envío -->
+                    <button type="submit" style="margin-bottom: 15px;"> Crear Cuenta </button>
+
+                    <!-- 8. Enlace al login -->
+                    <div style="text-align: center;">
+                        <label> ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></label>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer> <!-- Footer Copiado--> 
+        <div class="footer-info">
+            <p> Dirección: Rancagua, Región de O'Higgins </p>
+            <p> Contacto: +56 9 1234 5678 </p>
+        </div>
+
+        <div class ="footer-copy">
+            <p> &copy; 2024 Veterinaria San Marcos. Todos los derechos reservados. </p>
+        </div>
+    </footer>
+
+    <script src ="script.js"></script>
+
+    
+</body>
+</html>
