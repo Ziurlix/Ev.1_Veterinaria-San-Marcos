@@ -6,9 +6,8 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* El body como flex-column ayuda a que el footer siempre quede abajo */
 body {
-    background-color: #f4f7f6; /* Fondo gris/celeste muy suave */
+    background-color: #f4f7f6;
     color: #333;
     display: flex;
     flex-direction: column;
@@ -21,7 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #2b7a78; /* Verde institucional */
+    background-color: #2b7a78;
     color: white;
 }
 
@@ -46,7 +45,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s; /* Animación suave al pasar el mouse */
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
@@ -70,20 +69,25 @@ header button:hover {
     background-color: #def2f1;
 }
 
-/* === 3. CONTENIDO PRINCIPAL (MAIN) === */
+/* === 3. CONTENIDO PRINCIPAL === */
 main {
-    flex: 1; /* Hace que el main ocupe todo el espacio sobrante */
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     width: 100%;
-    max-width: 1280px; /* Requisito desktop del proyecto */
+    max-width: 1280px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* === 4. FORMULARIOS (Login y Registro) === */
+.main-column {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* === 4. FORMULARIOS === */
 .Login-container {
     width: 100%;
     max-width: 450px;
@@ -91,7 +95,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 form div {
@@ -110,7 +114,7 @@ form div {
 
 .input:focus {
     outline: none;
-    border-color: #2b7a78; /* Cambia el borde al escribir */
+    border-color: #2b7a78;
 }
 
 button[type="submit"] {
@@ -140,7 +144,143 @@ button[type="submit"]:hover {
     width: auto;
 }
 
-/* === 5. MULTIMEDIA Y TARJETAS === */
+/* === 5. TARJETAS DE SERVICIOS Y CONTENIDO === */
+.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.cards-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.card-service {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 24px 20px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-service h3 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.card-service p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+/* === 6. CLASES DE APOYO (EQUIPO, CONTACTO, PORTAL) === */
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.error-text {
+    color: #d9534f;
+    font-size: 12px;
+    margin-top: 2px;
+    display: block;
+}
+
+.info-card {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.team-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    text-align: left;
+    display: inline-block;
+}
+
+.team-list li {
+    margin-bottom: 10px;
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-info {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    max-width: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.map-placeholder {
+    background-color: #e0e0e0;
+    width: 350px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px dashed #999;
+    color: #666;
+    text-align: center;
+}
+
+.notice-warning {
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #2b7a78;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
 .multimedia-container {
     background-color: white;
     padding: 30px;
@@ -155,11 +295,7 @@ button[type="submit"]:hover {
     margin-top: 15px;
 }
 
-article {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* === 6. PIE DE PÁGINA (FOOTER) === */
+/* === 7. PIE DE PÁGINA === */
 footer {
     background-color: #17252a;
     color: white;
@@ -173,10 +309,7 @@ footer {
     margin-bottom: 10px;
 }
 
-
-/* === 7. MEDIA QUERIES (DISEÑO RESPONSIVE) === */
-
-/* Para Tablets (pantallas menores a 768px) */
+/* === 8. MEDIA QUERIES (AL FINAL) === */
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
@@ -190,7 +323,6 @@ footer {
     }
 }
 
-/* Para Celulares (pantallas menores a 480px, cubre el min de 360px) */
 @media screen and (max-width: 480px) {
     nav ul {
         flex-direction: column;
@@ -209,6 +341,6 @@ footer {
     }
     
     .Login-container {
-        padding: 20px; /* Un poco menos de padding en celu para que no aprete */
+        padding: 20px;
     }
 }

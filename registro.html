@@ -34,51 +34,51 @@
 
     <main> <!-- Formulario Login --> 
         <section> 
-            <div class ="login-container" style ="margin: 0 auto;">
-                <h1 style ="text-align: center; margin-bottom: 20px;"> Crear Cuenta </h1>
-                <form id ="ingresoForm">
+            <div class ="login-container">
+                <h1 class="form-title"> Crear Cuenta </h1>
+                <form id ="loginForm">
 
                     <div> <!-- 1. Nombre --> 
                         <label for ="user"> Nombre Completo </label>
-                        <input type ="text" id ="user" placeholder ="Nombre completo" class ="input" required>
-                        <span id ="error-user" style ="color: red; font-size: 12px; margin-top: 2px;"></span>
+                        <input type ="text" id ="user" placeholder ="Nombre completo" class ="input">
+                        <span id ="error-user" class="error-text"></span>
                     </div>
 
                     <div> <!-- 2. Email-->
                         <label for ="email"> Dirección de correo </label>
-                        <input type ="text" id ="login-psw" placeholder ="Dirección de correo" class ="input" required>
-                        <span id ="error-email" style ="color: red; font-size: 12px; margin-top: 2px;"></span>
+                        <input type ="email" id ="email" placeholder ="Dirección de correo" class ="input">
+                        <span id ="error-email" class="error-text"></span>
                     </div>
 
                     <div> <!-- 3. Telefono --> 
                         <label for ="phone"> Número de teléfono </label>
-                        <input type ="tel" id ="phone" placeholder ="Número de teléfono" class ="input" required>
-                        <span id ="error-user" style ="color: red; font-size: 12px; margin-top: 2px;"></span>
+                        <input type ="tel" id ="phone" placeholder ="Número de teléfono" class ="input">
+                        <span id ="error-phone" class="error-text"></span>
                     </div>
 
                     <div> <!-- 4. Contraseña -->
                         <label for="password">Crea una contraseña</label>
                         <input type="password" id="password" placeholder="Crea una contraseña" class="input">
-                        <span id="error-psw" style="color: red; font-size: 12px; margin-top: 2px;"></span>
+                        <span id="error-psw" class="error-text"></span>
                     </div>
 
                     <div> <!-- 5. Confirmar Contraseña -->
                         <label for="confirm-psw">Confirma tu contraseña</label>
                         <input type="password" id="confirm-psw" placeholder="Confirma tu contraseña" class="input">
-                        <span id="error-confirm" style="color: red; font-size: 12px; margin-top: 2px;"></span>
+                        <span id="error-confirm" class="error-text"></span>
                     </div>
 
                     <!-- 6. Términos y condiciones -->
-                    <div class="checkbox-container" style="margin-top: 10px; margin-bottom: 15px;">
-                        <input type="checkbox" id="terms" name="terminos" required>
+                    <div class="checkbox-container mb-15">
+                        <input type="checkbox" id="terms" name="terminos">
                         <label for="terms"> Acepto los <a href="#">términos de uso</a></label>  
                     </div>
 
                     <!-- 7. Botón envío -->
-                    <button type="submit" style="margin-bottom: 15px;"> Crear Cuenta </button>
+                    <button type="submit" class="mb-15"> Crear Cuenta </button>
 
                     <!-- 8. Enlace al login -->
-                    <div style="text-align: center;">
+                    <div class="text-center">
                         <label> ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></label>
                     </div>
                 </form>
