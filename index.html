@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Veterinaria San Marcos </title>
+
+    <!-- CSS Externo -->
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header y Menu navegacion -->
+     <header> 
+        <div> 
+            <!-- Agregar despues logo veterinaria -->
+            <img src ="https://irp.cdn-website.com/ddaef7ae/dms3rep/multi/opt/LOGO-VETERINARIA-220w.png" alt ="Logo veterinaria" width ="50">
+            <span> Veterinaria San Marcos</span>
+        </div>
+
+        <nav> <!-- Menu de navegación -->
+            <ul> 
+                <li> <a href ="index.html">  Home </a> </li>
+                <li> <a href ="servicios.html"> Servicios </a></a></li>
+                <li> <a href ="equipo.html"> Equipo </a></li>
+                <li> <a href ="portal.html"> Portal </a></li>
+                <li> <a href ="contacto.html"> Contacto </a></li>
+            </ul>
+        </nav>
+
+        <div> <!-- Botones de inicio de sesión y registro -->
+            <button onclick ="window.location.href='login.html'"> Iniciar Sesión </button>
+            <button onclick ="window.location.href='registro.html'"> Registrarse </button>
+        </div>
+     </header>
+    
+    <main> <!-- Contenido principal -->
+        <section style ="max-width: 500px; text-align: center;"> <!-- Seccion Bienvenida-->
+            <h1> Bienvenido a Veterinaria San Marcos </h1>
+            <p style ="margin-top: 15px;">
+                Cuidamos a tus mascotas con amor y profesionalismo. Nuestro equipo de expertos está dedicado a brindar
+                la mejor atención veterinaria para tus amigos peludos. Explora nuestros servicios y descubre cómo podemos ayudarte a 
+                mantener a tus mascotas felices y saludables. 
+            </p>
+        </section>
+
+
+      <!-- Contenido Multimedia-->
+        <article class ="multimedia-container">
+            <h2 style ="text-align: center; margin-bottom: 15px;"> Conoce nuestra clinica </h2>
+            <img src ="https://www.universodelasaludanimal.com/wp-content/uploads/sites/61/2021/07/Cacho-e-gato-juntos-no-chao-posando-pra-foto_3.jpg" alt="Perro y gato juntos" width="400">
+
+        <video width="400" controls>
+            <source src ="4740-179738694.mp4" type="video/mp4">
+            tu navegador no soporta la etiqueta de video.
+        </video>
+        </article>
+    </main>
+
+    <footer> <!-- Pie Pagina--> 
+        <div class="footer-info">
+            <p> Dirección: Rancagua, Región de O'Higgins </p>
+            <p> Contacto: +56 9 1234 5678 </p>
+        </div>
+
+        <div class ="footer-copy">
+            <p> &copy; 2024 Veterinaria San Marcos. Todos los derechos reservados. </p>
+        </div>
+    </footer>
+
+    <script src ="script.js"></script>
+</body>
+</html>
