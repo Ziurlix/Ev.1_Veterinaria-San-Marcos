@@ -1,4 +1,3 @@
-/* === 1. RESET Y ESTILOS BASE === */
 * {
     margin: 0;
     padding: 0;
@@ -6,22 +5,20 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* El body como flex-column ayuda a que el footer siempre quede abajo */
 body {
-    background-color: #f4f7f6; /* Fondo gris/celeste muy suave */
+    background-color: #f4f7f6; 
     color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* === 2. CABECERA Y NAVEGACIÓN === */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #2b7a78; /* Verde institucional */
+    background-color: #2b7a78;
     color: white;
 }
 
@@ -46,7 +43,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s; /* Animación suave al pasar el mouse */
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
@@ -70,20 +67,18 @@ header button:hover {
     background-color: #def2f1;
 }
 
-/* === 3. CONTENIDO PRINCIPAL (MAIN) === */
 main {
-    flex: 1; /* Hace que el main ocupe todo el espacio sobrante */
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     width: 100%;
-    max-width: 1280px; /* Requisito desktop del proyecto */
+    max-width: 1280px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* === 4. FORMULARIOS (Login y Registro) === */
 .Login-container {
     width: 100%;
     max-width: 450px;
@@ -91,7 +86,7 @@ main {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 form div {
@@ -110,7 +105,7 @@ form div {
 
 .input:focus {
     outline: none;
-    border-color: #2b7a78; /* Cambia el borde al escribir */
+    border-color: #2b7a78;
 }
 
 button[type="submit"] {
@@ -140,7 +135,6 @@ button[type="submit"]:hover {
     width: auto;
 }
 
-/* === 5. MULTIMEDIA Y TARJETAS === */
 .multimedia-container {
     background-color: white;
     padding: 30px;
@@ -159,7 +153,6 @@ article {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* === 6. PIE DE PÁGINA (FOOTER) === */
 footer {
     background-color: #17252a;
     color: white;
@@ -173,10 +166,7 @@ footer {
     margin-bottom: 10px;
 }
 
-
-/* === 7. MEDIA QUERIES (DISEÑO RESPONSIVE) === */
-
-/* Para Tablets (pantallas menores a 768px) */
+/* Para Tablets */
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
@@ -190,7 +180,7 @@ footer {
     }
 }
 
-/* Para Celulares (pantallas menores a 480px, cubre el min de 360px) */
+/* Para Celulares */
 @media screen and (max-width: 480px) {
     nav ul {
         flex-direction: column;
@@ -209,6 +199,6 @@ footer {
     }
     
     .Login-container {
-        padding: 20px; /* Un poco menos de padding en celu para que no aprete */
+        padding: 20px;
     }
 }
