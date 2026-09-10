@@ -89,16 +89,36 @@ if (formLogin) {
         event.preventDefault();
 
         // Se capturan los datos
+        const spanErrorEmail = document.getElementById('error-login-email');
+        const spanErrorPsw = document.getElementById('error-login-psw');
+        if (spanErrorEmail) spanErrorEmail.textContent = '';
+        if (spanErrorPsw) spanErrorPsw.textContent = '';
+
+        // 2. Capturar valores
         const emailLogin = document.getElementById('login-email').value.trim();
         const pswLogin = document.getElementById('login-psw').value.trim();
+        let hayErrores = false;
 
-        // Validacion simple: v'' || pswLogin =erificamos que campos no esten vacios
-        if (emailLogin === '' || pswLogin === '') {
-            alert ('Por favor, complete todos los campos para ingresar');
-        } else {
+        // 3. Validar Correo (vacío y formato con Regex)
+        if (emailLogin === '') {
+            if (spanErrorEmail) spanErrorEmail.textContent = 'El correo es obligatorio.';
+            hayErrores = true;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailLogin)) {
+            if (spanErrorEmail) spanErrorEmail.textContent = 'Ingresa un correo válido (ej: usuario@gmail.com).';
+            hayErrores = true;
+        }
 
-            // Si hay datos, simulamos ingreso y redirigimos al portal
-            alert('Inicio de sesion exitoso. Redirigiendo a tu portal...');
+        // 4. Validar Contraseña (vacía y mínimo de caracteres)
+        if (pswLogin === '') {
+            if (spanErrorPsw) spanErrorPsw.textContent = 'La contraseña es obligatoria.';
+            hayErrores = true;
+        } else if (pswLogin.length < 6) {
+            if (spanErrorPsw) spanErrorPsw.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+            hayErrores = true;
+        }
+
+        // 5. Redireccionar solo si no hay ningún error
+        if (!hayErrores) {
             window.location.href = 'portal.html';
         }
     });
