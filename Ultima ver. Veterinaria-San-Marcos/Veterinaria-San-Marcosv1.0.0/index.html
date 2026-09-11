@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Veterinaria San Marcos</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container">
+
+                <!-- Logo y nombre -->
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    🐾 Veterinaria San Marcos
+                </a>
+
+                <!-- Botón menú en celular -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menú -->
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal"
+                >
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#inicio"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#nosotros"
+                            >
+                                Nosotros
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#servicios"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="#ubicacion">Ubicación</a>
+                           </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="#contacto"
+                            >
+                                Contacto
+                            </a>
+                        </li>
+
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+
+                            <button
+                                type="button"
+                                class="btn btn-light"
+                                id="btnLogin"
+                            >
+                                Iniciar sesión
+                            </button>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+    <main>
+
+
+        <!-- =====================================
+             INICIO
+        ====================================== -->
+        <section id="inicio">
+
+            <div class="container">
+
+                <div class="row align-items-center">
+
+                    <!-- Texto -->
+                    <div class="col-lg-6 hero-text">
+
+                        <h1>
+                            Cuidamos a quienes más quieres 🐾
+                        </h1>
+
+                        <p class="lead">
+                            Atención veterinaria profesional
+                            para el cuidado y bienestar de tus mascotas.
+                        </p>
+
+                        <p>
+                            Consulta nuestros servicios y solicita
+                            atención de manera rápida y sencilla.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary btn-lg"
+                            id="btnSolicitarCita"
+                        >
+                            Solicitar una cita
+                        </button>
+
+                    </div>
+
+
+                  
+                    <!-- Video -->
+                 <div class="col-lg-6 hero-video-col">
+
+                   <video
+                     class="hero-video"
+                      autoplay
+                     muted
+                     loop
+                     playsinline
+    >
+                   <source
+                        src="video-portada.mp4"
+                        type="video/mp4"
+        >
+                    Tu navegador no soporta videos.
+                  </video>
+
+                 </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             NOSOTROS
+        ====================================== -->
+        <section id="nosotros">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        ¿Quiénes somos?
+                    </h2>
+
+                    <p>
+                        Conoce más sobre Veterinaria San Marcos
+                    </p>
+
+                </div>
+
+                <div class="about-content">
+
+                    <p>
+                        Veterinaria San Marcos es una clínica ubicada
+                        en Rancagua, dedicada al cuidado y bienestar
+                        de las mascotas.
+                    </p>
+
+                    <p>
+                        La clínica atiende principalmente perros y gatos,
+                        además de conejos y aves.
+                    </p>
+
+                    <p>
+                        Nuestro objetivo es entregar una atención
+                        profesional y cercana para cada mascota.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SERVICIOS
+        ====================================== -->
+        <section id="servicios">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        Nuestros servicios
+                    </h2>
+
+                    <p>
+                        Servicios disponibles para el cuidado de tu mascota
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- Consulta general -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="card service-card h-100">
+
+                            <div class="card-body">
+
+                                <div class="service-icon">
+                                    🩺
+                                </div>
+
+                                <h3 class="card-title">
+                                    Consulta general
+                                </h3>
+
+                                <p class="card-text">
+                                    Evaluación general y atención médica
+                                    para tu mascota.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btnServicio"
+                                    data-servicio="Consulta general"
+                                >
+                                    Solicitar servicio
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Vacunación -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="card service-card h-100">
+
+                            <div class="card-body">
+
+                                <div class="service-icon">
+                                    💉
+                                </div>
+
+                                <h3 class="card-title">
+                                    Vacunación
+                                </h3>
+
+                                <p class="card-text">
+                                    Mantén las vacunas de tu mascota
+                                    al día.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btnServicio"
+                                    data-servicio="Vacunación"
+                                >
+                                    Solicitar servicio
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Cirugía -->
+                    <div class="col-md-6 col-lg-4">
+
+                        <article class="card service-card h-100">
+
+                            <div class="card-body">
+
+                                <div class="service-icon">
+                                    ⚕️
+                                </div>
+
+                                <h3 class="card-title">
+                                    Cirugía menor
+                                </h3>
+
+                                <p class="card-text">
+                                    Procedimientos quirúrgicos menores
+                                    realizados por profesionales.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btnServicio"
+                                    data-servicio="Cirugía menor"
+                                >
+                                    Solicitar servicio
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Desparasitación -->
+                    <div class="col-md-6 col-lg-6">
+
+                        <article class="card service-card h-100">
+
+                            <div class="card-body">
+
+                                <div class="service-icon">
+                                    🪱
+                                </div>
+
+                                <h3 class="card-title">
+                                    Desparasitación
+                                </h3>
+
+                                <p class="card-text">
+                                    Prevención y control de parásitos
+                                    para proteger la salud de tu mascota.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btnServicio"
+                                    data-servicio="Desparasitación"
+                                >
+                                    Solicitar servicio
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- Control de peso -->
+                    <div class="col-md-6 col-lg-6">
+
+                        <article class="card service-card h-100">
+
+                            <div class="card-body">
+
+                                <div class="service-icon">
+                                    ⚖️
+                                </div>
+
+                                <h3 class="card-title">
+                                    Control de peso
+                                </h3>
+
+                                <p class="card-text">
+                                    Seguimiento del peso y estado
+                                    nutricional de tu mascota.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-primary btnServicio"
+                                    data-servicio="Control de peso"
+                                >
+                                    Solicitar servicio
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CONTACTO
+        ====================================== -->
+        <section id="contacto">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>
+                        Contacto
+                    </h2>
+
+                    <p>
+                        Estamos para ayudarte
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <p>
+                        📍
+                        <strong>Ubicación:</strong>
+                        Rancagua, Región de O'Higgins
+                    </p>
+
+                    <p>
+                        📞
+                        <strong>Teléfono:</strong>
+                        +56 9 XXXX XXXX
+                    </p>
+
+                    <p>
+                        📧
+                        <strong>Correo:</strong>
+                        contacto@veterinariasanmarcos.cl
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- =========================================
+     VIDEO DE LA VETERINARIA
+========================================= -->
+
+<section class="video-section" id="video">
+
+    <div class="container">
+
+        <h2 class="text-center">
+            Conoce nuestra veterinaria
+        </h2>
+
+     
+
+    </main>
+
+
+    <!-- =========================================
+         MODAL LOGIN
+    ========================================== -->
+    <div
+        class="modal fade"
+        id="modalLogin"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+    >
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2
+                        class="modal-title fs-5"
+                        id="modalLoginLabel"
+                    >
+                        🐾 Iniciar sesión
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    ></button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <form id="formLogin" novalidate>
+
+                        <!-- Correo -->
+                        <div class="mb-3">
+
+                            <label
+                                for="correoLogin"
+                                class="form-label"
+                            >
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="correoLogin"
+                                placeholder="ejemplo@correo.cl"
+                            >
+
+                            <div
+                                class="invalid-feedback"
+                                id="errorCorreo"
+                            >
+                                Ingresa un correo electrónico válido.
+                            </div>
+
+                        </div>
+
+
+                        <!-- Contraseña -->
+                        <div class="mb-3">
+
+                            <label
+                                for="passwordLogin"
+                                class="form-label"
+                            >
+                                Contraseña
+                            </label>
+
+                            <input
+                                type="password"
+                                class="form-control"
+                                id="passwordLogin"
+                                placeholder="Ingresa tu contraseña"
+                            >
+
+                            <div
+                                class="invalid-feedback"
+                                id="errorPassword"
+                            >
+                                La contraseña es obligatoria.
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100"
+                        >
+                            Iniciar sesión
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <div class="modal-footer justify-content-center">
+
+                    <p class="mb-0">
+
+                        ¿No tienes una cuenta?
+
+                        <a href="registro.html">
+                            Regístrate
+                    
+                        </a>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MODAL SOLICITAR CITA
+    ========================================== -->
+    <div
+        class="modal fade"
+        id="modalCita"
+        tabindex="-1"
+        aria-labelledby="modalCitaLabel"
+        aria-hidden="true"
+    >
+
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h2
+                        class="modal-title fs-5"
+                        id="modalCitaLabel"
+                    >
+                        📅 Solicitar una cita
+                    </h2>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Cerrar"
+                    ></button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <form id="formCita" novalidate>
+
+                        <div class="row g-3">
+
+                            <!-- Nombre mascota -->
+                            <div class="col-md-6">
+
+                                <label
+                                    for="nombreMascota"
+                                    class="form-label"
+                                >
+                                    Nombre de la mascota
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="nombreMascota"
+                                    placeholder="Ej: Luna"
+                                >
+
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    Ingresa el nombre de tu mascota.
+                                </div>
+
+                            </div>
+
+
+                            <!-- Tipo mascota -->
+                            <div class="col-md-6">
+
+                                <label
+                                    for="tipoMascota"
+                                    class="form-label"
+                                >
+                                    Tipo de mascota
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="tipoMascota"
+                                >
+
+                                    <option value="">
+                                        Selecciona una opción
+                                    </option>
+
+                                    <option value="Perro">
+                                        Perro
+                                    </option>
+
+                                    <option value="Gato">
+                                        Gato
+                                    </option>
+
+                                    <option value="Conejo">
+                                        Conejo
+                                    </option>
+
+                                    <option value="Ave">
+                                        Ave
+                                    </option>
+
+                                </select>
+
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    Selecciona el tipo de mascota.
+                                </div>
+
+                            </div>
+
+
+                            <!-- Servicio -->
+                            <div class="col-12">
+
+                                <label
+                                    for="servicioCita"
+                                    class="form-label"
+                                >
+                                    Servicio
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="servicioCita"
+                                >
+
+                                    <option value="">
+                                        Selecciona un servicio
+                                    </option>
+
+                                    <option value="Consulta general">
+                                        Consulta general
+                                    </option>
+
+                                    <option value="Vacunación">
+                                        Vacunación
+                                    </option>
+
+                                    <option value="Cirugía menor">
+                                        Cirugía menor
+                                    </option>
+
+                                    <option value="Desparasitación">
+                                        Desparasitación
+                                    </option>
+
+                                    <option value="Control de peso">
+                                        Control de peso
+                                    </option>
+
+                                </select>
+
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    Selecciona un servicio.
+                                </div>
+
+                            </div>
+
+
+                            <!-- Fecha -->
+                            <div class="col-md-6">
+
+                                <label
+                                    for="fechaCita"
+                                    class="form-label"
+                                >
+                                    Fecha
+                                </label>
+
+                                <input
+                                    type="date"
+                                    class="form-control"
+                                    id="fechaCita"
+                                >
+
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    Selecciona una fecha.
+                                </div>
+
+                            </div>
+
+
+                            <!-- Hora -->
+                            <div class="col-md-6">
+
+                                <label
+                                    for="horaCita"
+                                    class="form-label"
+                                >
+                                    Hora
+                                </label>
+
+                                <input
+                                    type="time"
+                                    class="form-control"
+                                    id="horaCita"
+                                >
+
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    Selecciona una hora.
+                                </div>
+
+                            </div>
+
+
+                            <!-- Motivo -->
+                            <div class="col-12">
+
+                                <label
+                                    for="motivoCita"
+                                    class="form-label"
+                                >
+                                    Motivo de la consulta
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="motivoCita"
+                                    rows="4"
+                                    placeholder="Describe brevemente el motivo de la consulta"
+                                ></textarea>
+
+                                <div
+                                    class="invalid-feedback"
+                                >
+                                    Ingresa el motivo de la consulta.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        form="formCita"
+                        class="btn btn-primary"
+                    >
+                        Solicitar cita
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+<!-- =========================================
+     MODAL MI CUENTA
+========================================== -->
+<div
+    class="modal fade"
+    id="modalCuenta"
+    tabindex="-1"
+    aria-labelledby="modalCuentaLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2
+                    class="modal-title fs-5"
+                    id="modalCuentaLabel"
+                >
+                    👤 Mi cuenta
+                </h2>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="cuenta-dato">
+                    <strong>Nombre:</strong>
+                    <span id="cuentaNombre">-</span>
+                </div>
+
+                <div class="cuenta-dato">
+                    <strong>Correo:</strong>
+                    <span id="cuentaCorreo">-</span>
+                </div>
+
+                <div class="cuenta-dato">
+                    <strong>Teléfono:</strong>
+                    <span id="cuentaTelefono">-</span>
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    id="btnMisCitas"
+                >
+                    📅 Mis citas
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    id="btnCerrarSesion"
+                >
+                    Cerrar sesión
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- =========================================
+     MODAL MIS CITAS
+========================================== -->
+<div
+    class="modal fade"
+    id="modalMisCitas"
+    tabindex="-1"
+    aria-labelledby="modalMisCitasLabel"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2
+                    class="modal-title fs-5"
+                    id="modalMisCitasLabel"
+                >
+                    📅 Mis citas
+                </h2>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar"
+                ></button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div id="listaCitas">
+
+                    <p class="text-center text-muted">
+                        No tienes citas registradas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Cerrar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<li class="nav-item">
+    <a class="nav-link" href="#ubicacion">Ubicación</a>
+</li>
+
+<section id="ubicacion">
+    <div class="container">
+        <div class="section-title">
+            <h2>📍 Nuestra ubicación</h2>
+            <p>Visítanos en Veterinaria San Marcos</p>
+        </div>
+
+        <div class="row align-items-center g-4">
+
+            <div class="col-lg-5">
+                <div class="contact-card">
+                    <h3>Veterinaria San Marcos</h3>
+
+                    <p>📍 Rancagua, Región del Libertador General Bernardo O'Higgins</p>
+                    <p>📞 +56 9 1234 5678</p>
+                    <p>🕒 Atención veterinaria</p>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="mapa-container">
+                    <iframe
+                        src="https://www.google.com/maps?q=Rancagua,%20Chile&output=embed"
+                        width="100%"
+                        height="350"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+
+        <div class="container text-center">
+
+            <p class="mb-1">
+                🐾 Veterinaria San Marcos
+            </p>
+
+            <p class="mb-0">
+                © 2026 Veterinaria San Marcos.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript propio -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crear cuenta | Veterinaria San Marcos</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="index.html">
+                    🐾 Veterinaria San Marcos
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal"
+                >
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="index.html"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="index.html#servicios"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="index.html#contacto"
+                            >
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         REGISTRO
+    ========================================== -->
+    <main>
+
+        <section class="registro-section">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-8 col-lg-6">
+
+                        <div class="registro-card">
+
+                            <div class="text-center mb-4">
+
+                                <div class="registro-icon">
+                                    🐾
+                                </div>
+
+                                <h1>
+                                    Crear una cuenta
+                                </h1>
+
+                                <p>
+                                    Regístrate para solicitar citas
+                                    y gestionar la atención de tus mascotas.
+                                </p>
+
+                            </div>
+
+
+                            <form id="formRegistro" novalidate>
+
+
+                                <!-- Nombre -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="nombreRegistro"
+                                        class="form-label"
+                                    >
+                                        Nombre completo
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nombreRegistro"
+                                        placeholder="Ej: Juan Pérez"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorNombreRegistro"
+                                    >
+                                        Ingresa tu nombre completo.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Correo -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="correoRegistro"
+                                        class="form-label"
+                                    >
+                                        Correo electrónico
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="correoRegistro"
+                                        placeholder="ejemplo@correo.cl"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorCorreoRegistro"
+                                    >
+                                        Ingresa un correo electrónico válido.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="telefonoRegistro"
+                                        class="form-label"
+                                    >
+                                        Número de teléfono
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        id="telefonoRegistro"
+                                        placeholder="Ej: 912345678"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorTelefonoRegistro"
+                                    >
+                                        Ingresa un teléfono válido.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Contraseña -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="passwordRegistro"
+                                        class="form-label"
+                                    >
+                                        Contraseña
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="passwordRegistro"
+                                        placeholder="Mínimo 6 caracteres"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorPasswordRegistro"
+                                    >
+                                        La contraseña debe tener al menos
+                                        6 caracteres.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Confirmar contraseña -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="confirmPasswordRegistro"
+                                        class="form-label"
+                                    >
+                                        Confirmar contraseña
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="confirmPasswordRegistro"
+                                        placeholder="Repite tu contraseña"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorConfirmPasswordRegistro"
+                                    >
+                                        Las contraseñas no coinciden.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Términos -->
+                                <div class="form-check mb-4">
+
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="terminosRegistro"
+                                    >
+
+                                    <label
+                                        class="form-check-label"
+                                        for="terminosRegistro"
+                                    >
+                                        Acepto los términos y condiciones.
+                                    </label>
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorTerminosRegistro"
+                                    >
+                                        Debes aceptar los términos y condiciones.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Botón -->
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100"
+                                >
+                                    Crear cuenta
+                                </button>
+
+                            </form>
+
+
+                            <!-- Ir al login -->
+                            <div class="text-center mt-4">
+
+                                <p class="mb-0">
+
+                                    ¿Ya tienes una cuenta?
+
+                                    <a href="index.html" id="volverLogin">
+                                        Iniciar sesión
+                                    </a>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+
+        <div class="container text-center">
+
+            <p class="mb-1">
+                🐾 Veterinaria San Marcos
+            </p>
+
+            <p class="mb-0">
+                © 2026 Veterinaria San Marcos.
+                Todos los derechos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
