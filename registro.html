@@ -1,104 +1,360 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Registro | Veterinaria San Marcos </title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>Crear cuenta | Veterinaria San Marcos</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-   
-    <header>  <!-- Header Copiado -->
-        <div> 
-            <img src ="https://irp.cdn-website.com/ddaef7ae/dms3rep/multi/opt/LOGO-VETERINARIA-220w.png" alt ="Logo veterinaria" width ="50">
-            <span> Veterinaria San Marcos</span>
-        </div>
 
-        <nav> 
-            <ul> 
-                <li> <a href ="index.html">  Home </a> </li>
-                <li> <a href ="servicios.html"> Servicios </a></a></li>
-                <li> <a href ="equipo.html"> Equipo </a></li>
-                <li> <a href ="portal.html"> Portal </a></li>
-                <li> <a href ="contacto.html"> Contacto </a></li>
-            </ul>
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="index.html">
+                    🐾 Veterinaria San Marcos
+                </a>
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menú"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="menuPrincipal"
+                >
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="index.html"
+                            >
+                                Inicio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="index.html#servicios"
+                            >
+                                Servicios
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link"
+                                href="index.html#contacto"
+                            >
+                                Contacto
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
         </nav>
 
-        <div>
-            <button onclick ="window.location.href='login.html'"> Iniciar Sesión </button>
-            <button onclick ="window.location.href='registro.html'"> Registrarse </button>
-        </div>
-     </header>
+    </header>
 
-  
-    <main> <!-- Formulario Login --> 
-        <section> 
-            <div class ="login-container">
-                <h1 class="form-title"> Crear Cuenta </h1>
-                <form id ="loginForm" novalidate>
 
-                    <div> <!-- 1. Nombre --> 
-                        <label for ="user"> Nombre Completo </label>
-                        <input type ="text" id ="user" placeholder ="Nombre completo" class ="input">
-                        <span id ="error-user" class="error-text"></span>
+    <!-- =========================================
+         REGISTRO
+    ========================================== -->
+    <main>
+
+        <section class="registro-section">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+
+                    <div class="col-md-8 col-lg-6">
+
+                        <div class="registro-card">
+
+                            <div class="text-center mb-4">
+
+                                <div class="registro-icon">
+                                    🐾
+                                </div>
+
+                                <h1>
+                                    Crear una cuenta
+                                </h1>
+
+                                <p>
+                                    Regístrate para solicitar citas
+                                    y gestionar la atención de tus mascotas.
+                                </p>
+
+                            </div>
+
+
+                            <form id="formRegistro" novalidate>
+
+
+                                <!-- Nombre -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="nombreRegistro"
+                                        class="form-label"
+                                    >
+                                        Nombre completo
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="nombreRegistro"
+                                        placeholder="Ej: Juan Pérez"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorNombreRegistro"
+                                    >
+                                        Ingresa tu nombre completo.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Correo -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="correoRegistro"
+                                        class="form-label"
+                                    >
+                                        Correo electrónico
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="correoRegistro"
+                                        placeholder="ejemplo@correo.cl"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorCorreoRegistro"
+                                    >
+                                        Ingresa un correo electrónico válido.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Teléfono -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="telefonoRegistro"
+                                        class="form-label"
+                                    >
+                                        Número de teléfono
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        class="form-control"
+                                        id="telefonoRegistro"
+                                        placeholder="Ej: 912345678"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorTelefonoRegistro"
+                                    >
+                                        Ingresa un teléfono válido.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Contraseña -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="passwordRegistro"
+                                        class="form-label"
+                                    >
+                                        Contraseña
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="passwordRegistro"
+                                        placeholder="Mínimo 6 caracteres"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorPasswordRegistro"
+                                    >
+                                        La contraseña debe tener al menos
+                                        6 caracteres.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Confirmar contraseña -->
+                                <div class="mb-3">
+
+                                    <label
+                                        for="confirmPasswordRegistro"
+                                        class="form-label"
+                                    >
+                                        Confirmar contraseña
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="confirmPasswordRegistro"
+                                        placeholder="Repite tu contraseña"
+                                    >
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorConfirmPasswordRegistro"
+                                    >
+                                        Las contraseñas no coinciden.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Términos -->
+                                <div class="form-check mb-4">
+
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="terminosRegistro"
+                                    >
+
+                                    <label
+                                        class="form-check-label"
+                                        for="terminosRegistro"
+                                    >
+                                        Acepto los términos y condiciones.
+                                    </label>
+
+                                    <div
+                                        class="invalid-feedback"
+                                        id="errorTerminosRegistro"
+                                    >
+                                        Debes aceptar los términos y condiciones.
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Botón -->
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary w-100"
+                                >
+                                    Crear cuenta
+                                </button>
+
+                            </form>
+
+
+                            <!-- Ir al login -->
+                            <div class="text-center mt-4">
+
+                                <p class="mb-0">
+
+                                    ¿Ya tienes una cuenta?
+
+                                    <a href="index.html" id="volverLogin">
+                                        Iniciar sesión
+                                    </a>
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div> <!-- 2. Email-->
-                        <label for ="email"> Dirección de correo </label>
-                        <input type ="email" id ="email" placeholder ="Dirección de correo" class ="input">
-                        <span id ="error-email" class="error-text"></span>
-                    </div>
+                </div>
 
-                    <div> <!-- 3. Telefono --> 
-                        <label for ="phone"> Número de teléfono </label>
-                        <input type ="tel" id ="phone" placeholder ="Número de teléfono" class ="input">
-                        <span id ="error-phone" class="error-text"></span>
-                    </div>
-
-                    <div> <!-- 4. Contraseña -->
-                        <label for="password">Crea una contraseña</label>
-                        <input type="password" id="password" placeholder="Crea una contraseña" class="input">
-                        <span id="error-psw" class="error-text"></span>
-                    </div>
-
-                    <div> <!-- 5. Confirmar Contraseña -->
-                        <label for="confirm-psw">Confirma tu contraseña</label>
-                        <input type="password" id="confirm-psw" placeholder="Confirma tu contraseña" class="input">
-                        <span id="error-confirm" class="error-text"></span>
-                    </div>
-
-                    <!-- 6. Términos y condiciones -->
-                    <div class="checkbox-container mb-15">
-                        <input type="checkbox" id="terms" name="terminos">
-                        <label for="terms"> Acepto los <a href="#">términos de uso</a></label>  
-                    </div>
-
-                    <!-- 7. Botón envío -->
-                    <button type="submit" class="mb-15"> Crear Cuenta </button>
-
-                    <!-- 8. Enlace al login -->
-                    <div class="text-center">
-                        <label> ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></label>
-                    </div>
-                </form>
             </div>
+
         </section>
+
     </main>
 
-    <footer> <!-- Footer Copiado--> 
-        <div class="footer-info">
-            <p> Dirección: Rancagua, Región de O'Higgins </p>
-            <p> Contacto: +56 9 1234 5678 </p>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer>
+
+        <div class="container text-center">
+
+            <p class="mb-1">
+                🐾 Veterinaria San Marcos
+            </p>
+
+            <p class="mb-0">
+                © 2026 Veterinaria San Marcos.
+                Todos los derechos reservados.
+            </p>
+
         </div>
 
-        <div class ="footer-copy">
-            <p> &copy; 2024 Veterinaria San Marcos. Todos los derechos reservados. </p>
-        </div>
     </footer>
 
-    <script src ="script.js"></script>
 
-    
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>

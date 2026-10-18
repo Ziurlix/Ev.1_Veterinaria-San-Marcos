@@ -1,73 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Veterinaria San Marcos </title>
+    <title>Veterinaria San Marcos</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-    <!-- CSS Externo -->
-     <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-    <!-- Header y Menu navegacion -->
-     <header> 
-        <div> 
-            <!-- Agregar despues logo veterinaria -->
-            <img src ="https://irp.cdn-website.com/ddaef7ae/dms3rep/multi/opt/LOGO-VETERINARIA-220w.png" alt ="Logo veterinaria" width ="50">
-            <span> Veterinaria San Marcos</span>
-        </div>
 
-        <nav> <!-- Menu de navegación -->
-            <ul> 
-                <li> <a href ="index.html">  Home </a> </li>
-                <li> <a href ="servicios.html"> Servicios </a></a></li>
-                <li> <a href ="equipo.html"> Equipo </a></li>
-                <li> <a href ="portal.html"> Portal </a></li>
-                <li> <a href ="contacto.html"> Contacto </a></li>
-            </ul>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#inicio">
+                    🐾 Veterinaria San Marcos
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ubicacion">Ubicación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                            <button type="button" class="btn btn-light" id="btnLogin">Iniciar sesión</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+    </header>
 
-        <div> <!-- Botones de inicio de sesión y registro -->
-            <button onclick ="window.location.href='login.html'"> Iniciar Sesión </button>
-            <button onclick ="window.location.href='registro.html'"> Registrarse </button>
-        </div>
-     </header>
-    
-    <main class ='main-column'> <!-- Contenido principal -->
-        <section sclass="info-card"> <!-- Seccion Bienvenida-->
-            <h1> Bienvenido a Veterinaria San Marcos </h1>
-            <p class="mb-15">
-                Cuidamos a tus mascotas con amor y profesionalismo. Nuestro equipo de expertos está dedicado a brindar
-                la mejor atención veterinaria para tus amigos peludos. Explora nuestros servicios y descubre cómo podemos ayudarte a 
-                mantener a tus mascotas felices y saludables. 
-            </p>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 hero-text">
+                        <h1>Cuidamos a quienes más quieres 🐾</h1>
+                        <p class="lead">Atención veterinaria profesional para el cuidado y bienestar de tus mascotas.</p>
+                        <p>Consulta nuestros servicios y solicita atención de manera rápida y sencilla.</p>
+                        <button type="button" class="btn btn-primary btn-lg" id="btnSolicitarCita">Solicitar una cita</button>
+
+                    </div>
+
+                    <div class="col-lg-6 hero-video-col mt-4 mt-lg-0">
+                        <video class="hero-video" autoplay muted loop playsinline>
+                            <source src="video-portada.mp4" type="video/mp4">
+                            Tu navegador no soporta videos.
+                        </video>
+
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- NOSOTROS -->
+        <section id="nosotros">
+            <div class="container">
+                <div class="section-title">
 
-      <!-- Contenido Multimedia-->
-        <article class ="multimedia-container">
-            <h2 class='secction-title text-center'> Conoce nuestra clinica </h2>
-            <div>
-                <img src ="https://www.universodelasaludanimal.com/wp-content/uploads/sites/61/2021/07/Cacho-e-gato-juntos-no-chao-posando-pra-foto_3.jpg" alt="Perro y gato juntos" width="400">
-                <video controls>
-                    <source src ="4740-179738694.mp4" type="video/mp4">
-                </video>
+                    <h2>¿Quiénes somos?</h2>
+                    <p>Conoce más sobre Veterinaria San Marcos</p>
+                </div>
+
+                <div class="about-content">
+                    <p>Veterinaria San Marcos es una clínica ubicada en Rancagua, dedicada al cuidado y bienestar de las mascotas.</p>
+                    <p>La clínica atiende principalmente perros y gatos, además de conejos y aves.</p>
+                    <p>Nuestro objetivo es entregar una atención profesional y cercana para cada mascota.</p>
+                </div>
+
             </div>
-        </article>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios">
+            <div class="container">
+                <div class="section-title">
+
+                    <h2>Nuestros servicios</h2>
+                    <p>Servicios disponibles para el cuidado de tu mascota</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100">
+                            <div class="card-body">
+                                <div class="service-icon">💉</div>
+                                <h3 class="card-title">Vacunación</h3>
+                                <p class="card-text">Antirrábica, séxtuple, triple felina y refuerzos anuales.</p>
+                                <div class="d-flex justify-content-between text-muted small my-2 px-1">
+                                    <span> ~10 Minutos </span>
+                                    <strong class="text-success">Desde $12.000 CLP 
+                                </div>
+                                <button type="button" class="btn btn-primary btnServicio" data-servicio="Vacunación">Solicitar servicio</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Vacunacion --> 
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100">
+                            <div class="card-body">
+                                <div class="service-icon">⚕️</div>
+                                <h3 class="card-title">Cirugía</h3>
+                                <p class="card-text">Esterilizaciones, cesáreas y cirugías menores con anestesia.</p>
+                                <div class="d-flex justify-content-between text-muted small my-2 px-1">
+                                    <span> ~45 - 90 Minutos </span>
+                                    <strong class="text-success">Desde $50.000 CLP </strong> 
+                                </div>
+                                <button type="button" class="btn btn-primary btnServicio" data-servicio="Cirugía">Solicitar servicio</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Cirugia -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card service-card h-100">
+                            <div class="card-body">
+                                <div class="service-icon">🪱</div>
+                                <h3 class="card-title">Desparasitación</h3>
+                                <p class="card-text">Tratamientos internos según peso y antiparasitario externo (pipeta).</p>
+                                <div class="d-flex justify-content-between text-muted small my-2 px-1">
+                                    <span> ~5 Minutos </span>
+                                    <strong class="text-success">Desde $7.500 CLP </strong>
+                                </div>
+                                <button type="button" class="btn btn-primary btnServicio" data-servicio="Desparasitación">Solicitar servicio</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Desparasitacion-->
+                    <div class="col-md-6 col-lg-6">
+                        <article class="card service-card h-100">
+                            <div class="card-body">
+                                <div class="service-icon">🔬</div>
+                                <h3 class="card-title">Exámenes clínicos</h3>
+                                <p class="card-text">Hemogramas, perfil bioquímico, radiografías y ecografías.</p>
+                                <div class="d-flex justify-content-between text-muted small my-2 px-1">
+                                    <span> 20 - 30 Minutos </span>
+                                    <strong class="text-success">Desde $18.000 CLP </strong>
+                                </div>
+                                <button type="button" class="btn btn-primary btnServicio" data-servicio="Exámenes clínicos">Solicitar servicio</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Exámenes -->
+                    <div class="col-md-6 col-lg-6">
+                        <article class="card service-card h-100">
+                            <div class="card-body">
+                                <div class="service-icon">🔬</div>
+                                <h3 class="card-title">Procedimientos y Cuidados</h3>
+                                <p class="card-text">Corte de uñas, microchip con registro, limpieza dental y hospitalización.</p>
+                                <div class="d-flex justify-content-between text-muted small my-2 px-1">
+                                    <span> Variable </span>
+                                    <strong class="text-success">Desde $5.000 CLP </strong>
+                                </div>
+                                <button type="button" class="btn btn-primary btnServicio" data-servicio="Procedimientos y Cuidados">Solicitar servicio</button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UBICACIÓN -->
+        <section id="ubicacion">
+            <div class="container">
+                <div class="section-title">
+                    <h2>📍 Nuestra ubicación</h2>
+                    <p>Visítanos en Veterinaria San Marcos</p>
+                </div>
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-5">
+                        <div class="contact-card">
+                            <h3>Veterinaria San Marcos</h3>
+                            <p>📍 Rancagua, Región del Libertador Bernardo O'Higgins</p>
+                            <p>📞 +56 9 1234 5678</p>
+                            <p>🕒 Lunes a Sábado: 09:00 a 19:00 hrs</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="mapa-container">
+                            <iframe src="https://www.google.com/maps?q=Rancagua,%20Chile&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                    <p>Estamos para ayudarte</p>
+                </div>
+                <div class="contact-card">
+                    <p>📍 <strong>Ubicación:</strong> Rancagua, Región de O'Higgins</p>
+                    <p>📞 <strong>Teléfono:</strong> +56 9 1234 5678</p>
+                    <p>📧 <strong>Correo:</strong> contacto@veterinariasanmarcos.cl</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer> <!-- Pie Pagina--> 
-        <div class="footer-info">
-            <p> Dirección: Rancagua, Región de O'Higgins </p>
-            <p> Contacto: +56 9 1234 5678 </p>
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalLoginLabel">🐾 Iniciar sesión</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formLogin" novalidate>
+                        <div class="mb-3">
+                            <label for="correoLogin" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correoLogin" placeholder="ejemplo@correo.cl">
+                            <div class="invalid-feedback" id="errorCorreo">Ingresa un correo electrónico válido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordLogin" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="passwordLogin" placeholder="Ingresa tu contraseña">
+                            <div class="invalid-feedback" id="errorPassword">La contraseña es obligatoria.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p class="mb-0">¿No tienes una cuenta? <a href="registro.html" class="text-decoration-none fw-bold" style="color: #1b5e4b;">Regístrate</a></p>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class ="footer-copy">
-            <p> &copy; 2024 Veterinaria San Marcos. Todos los derechos reservados. </p>
+    <!-- MODAL SOLICITAR CITA -->
+    <div class="modal fade" id="modalCita" tabindex="-1" aria-labelledby="modalCitaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalCitaLabel">📅 Solicitar una cita</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formCita" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nombreMascota" class="form-label">Nombre de la mascota</label>
+                                <input type="text" class="form-control" id="nombreMascota" placeholder="Ej: Luna">
+                                <div class="invalid-feedback">Ingresa el nombre de tu mascota.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="tipoMascota" class="form-label">Tipo de mascota</label>
+                                <select class="form-select" id="tipoMascota">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="Perro">Perro</option>
+                                    <option value="Gato">Gato</option>
+                                    <option value="Conejo">Conejo</option>
+                                    <option value="Ave">Ave</option>
+                                </select>
+                                <div class="invalid-feedback">Selecciona el tipo de mascota.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="servicioCita" class="form-label">Servicio</label>
+                                <select class="form-select" id="servicioCita">
+                                    <option value="">Selecciona un servicio</option>
+                                    <optgroup label="Vacunación">
+                                        <option value="Vacuna antirrábica ($12.000)">Vacuna antirrábica - $12.000</option>
+                                        <option value="Vacuna séxtuple canina ($18.000)">Vacuna séxtuple canina - $18.000</option>
+                                        <option value="Vacuna bivalente felina ($15.000)">Vacuna bivalente felina - $15.000</option>
+                                        <option value="Vacuna triple felina ($17.000)">Vacuna triple felina - $17.000</option>
+                                        <option value="Vacuna Bordetella ($14.000)">Vacuna Bordetella - $14.000</option>
+                                    </optgroup>
+
+                                    <optgroup label="Cirugías">
+                                        <option value="Esterilización canina ($60.000 - $80.000)">Esterilización canina - Desde $60.000</option>
+                                        <option value="Esterilización felina ($50.000 - $65.000)">Esterilización felina - Desde $50.000</option>
+                                        <option value="Extirpación tumor cutáneo ($120.000)">Extirpación tumor - $120.000</option>
+                                        <option value="Cesárea de urgencia ($180.000)">Cesárea de urgencia - $180.000</option>
+                                    </optgroup>
+
+                                    <optgroup label="Desparasitación">
+                                        <option value="Desparasitación interna ($8.000 - $11.000)">Desparasitación interna - Desde $8.000</option>
+                                        <option value="Antiparasitario externo pipeta ($7.500)">Antiparasitario externo (pipeta) - $7.500</option>
+                                    </optgroup>
+
+                                    <optgroup label="Exámenes">
+                                        <option value="Hemograma completo ($22.000)">Hemograma completo - $22.000</option>
+                                        <option value="Perfil bioquímico ($35.000)">Perfil bioquímico - $35.000</option>
+                                        <option value="Radiografía ($28.000)">Radiografía - $28.000</option>
+                                        <option value="Ecografía abdominal ($45.000)">Ecografía abdominal - $45.000</option>
+                                        <option value="Test de leishmaniasis ($18.000)">Test de leishmaniasis - $18.000</option>
+                                    </optgroup>
+
+                                    <optgroup label="Otros">
+                                        <option value="Corte de uñas ($5.000)">Corte de uñas - $5.000</option>
+                                        <option value="Limpieza dental ($55.000)">Limpieza dental - $55.000</option>
+                                        <option value="Microchip de identificación ($15.000)">Microchip de identificación - $15.000</option>
+                                        <option value="Hospitalización por día ($30.000)">Hospitalización (día) - $30.000</option>
+                                    </optgroup>
+                                </select>
+                                <div class="invalid-feedback">Selecciona un servicio.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fechaCita" class="form-label">Fecha</label>
+                                <input type="date" class="form-control" id="fechaCita">
+                                <div class="invalid-feedback">Selecciona una fecha.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="horaCita" class="form-label">Horario</label>
+                                <input type="time" class="form-control" id="horaCita">
+                                <div class="invalid-feedback">Selecciona una hora.</div>
+                            </div>
+                            <div class="col-12">
+                                <label for="motivoCita" class="form-label">Motivo de la consulta</label>
+                                <textarea class="form-control" id="motivoCita" rows="3" placeholder="Describe brevemente el motivo"></textarea>
+                                <div class="invalid-feedback">Ingresa el motivo de la consulta.</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" form="formCita" class="btn btn-primary">Solicitar cita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MI CUENTA -->
+    <div class="modal fade" id="modalCuenta" tabindex="-1" aria-labelledby="modalCuentaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalCuentaLabel">👤 Mi cuenta</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="cuenta-dato"><strong>Nombre:</strong><span id="cuentaNombre">-</span></div>
+                    <div class="cuenta-dato"><strong>Correo:</strong><span id="cuentaCorreo">-</span></div>
+                    <div class="cuenta-dato"><strong>Teléfono:</strong><span id="cuentaTelefono">-</span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnMisCitas">📅 Mis citas</button>
+                    <button type="button" class="btn btn-danger" id="btnCerrarSesion">Cerrar sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL MIS CITAS -->
+    <div class="modal fade" id="modalMisCitas" tabindex="-1" aria-labelledby="modalMisCitasLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="modalMisCitasLabel">📅 Mis citas</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="listaCitas">
+                        <p class="text-center text-muted">No tienes citas registradas.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container text-center">
+            <p class="mb-1">🐾 Veterinaria San Marcos</p>
+            <p class="mb-0">© 2026 Veterinaria San Marcos. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src ="script.js"></script>
+    <!-- Bootstrap JS & Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

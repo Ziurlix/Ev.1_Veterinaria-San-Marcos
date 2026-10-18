@@ -1,0 +1,370 @@
+/* =========================================
+   PALETA DE COLORES VETERINARIA
+   - Primario / Verde Bosque: #1b5e4b
+   - Primario Oscuro (Navbar / Footer): #123e32
+   - Primario Hover: #14493a
+   - Acento / Verde Menta suave: #e8f5f1
+   - Fondo general: #f8faf9
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8faf9;
+    color: #2c3e50;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   OVERRIDE BOTONES BOOTSTRAP (VERDES)
+========================================= */
+.btn-primary {
+    background-color: #1b5e4b !important;
+    border-color: #1b5e4b !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #14493a !important;
+    border-color: #14493a !important;
+}
+
+/* =========================================
+   HEADER Y NAVBAR
+========================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    background-color: #123e32;
+    padding: 14px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    color: #ffffff !important;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    margin-left: 8px;
+    transition: 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #7bedc5 !important;
+}
+
+.navbar .btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+/* =========================================
+   INICIO (HERO)
+========================================= */
+#inicio {
+    padding: 85px 0;
+    background: linear-gradient(135deg, #e8f5f1 0%, #ffffff 100%);
+}
+
+.hero-text h1 {
+    color: #123e32;
+    font-size: 3.1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.hero-text .btn {
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 12px 26px;
+    font-weight: 600;
+}
+
+.hero-video-col {
+    width: 100%;
+    max-width: 650px;
+    min-width: 0;
+}
+
+.hero-video {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(18, 62, 50, 0.15);
+}
+
+/* =========================================
+   SECCIONES GENERALES
+========================================= */
+#nosotros,
+#servicios,
+#contacto,
+#ubicacion {
+    padding: 75px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    color: #123e32;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #5d7168;
+}
+
+/* =========================================
+   NOSOTROS
+========================================= */
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* =========================================
+   SERVICIOS
+========================================= */
+#servicios {
+    background-color: #f1f8f5;
+}
+
+.service-card {
+    border: 1px solid rgba(27, 94, 75, 0.08);
+    border-radius: 18px;
+    background-color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(18, 62, 50, 0.12);
+}
+
+.service-card .card-body {
+    text-align: center;
+    padding: 30px;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #123e32;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service-card .card-text {
+    color: #5d7168;
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+.btnServicio {
+    margin-top: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 22px;
+}
+
+/* =========================================
+   CONTACTO Y UBICACIÓN
+========================================= */
+#contacto {
+    background-color: #ffffff;
+}
+
+#ubicacion {
+    background-color: #f8faf9;
+}
+
+.contact-card {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid rgba(27, 94, 75, 0.1);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.contact-card h3 {
+    color: #123e32;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-card p {
+    color: #4a5568;
+    margin-bottom: 12px;
+}
+
+.mapa-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.mapa-container iframe {
+    display: block;
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+/* =========================================
+   REGISTRO CARD
+========================================= */
+.registro-section {
+    padding: 60px 0;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+}
+
+.registro-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(18, 62, 50, 0.08);
+    border: 1px solid rgba(27, 94, 75, 0.08);
+}
+
+.registro-icon {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.registro-card h1 {
+    color: #123e32;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* =========================================
+   MODALES Y CITAS
+========================================= */
+.modal-content {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.modal-header {
+    background-color: #e8f5f1;
+}
+
+.modal-title {
+    color: #123e32;
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.cuenta-dato {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf2f0;
+}
+
+.cuenta-dato strong {
+    color: #123e32;
+}
+
+.cuenta-dato span {
+    color: #5d7168;
+}
+
+.cita-card {
+    border: 1px solid #d8e8e2;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: #fbfdfc;
+}
+
+.cita-card h3 {
+    color: #123e32;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.cita-card p {
+    margin-bottom: 6px;
+    color: #4a5568;
+}
+
+.estado-pendiente {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background-color: #fef3c7;
+    color: #92400e;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+    background-color: #123e32;
+    color: #ffffff;
+    padding: 30px 0;
+}
+
+footer p:last-child {
+    opacity: 0.8;
+}
