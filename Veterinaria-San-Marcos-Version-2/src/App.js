@@ -50,9 +50,10 @@ function App() {
     setLoginError('');
   };
 
-  const handleLogout = () => {
-    setUsuario(null);
-  };
+const handleLogout = () => {
+  localStorage.removeItem('usuarioVeterinaria');
+  setUsuario(null);
+};
 
   const solicitarServicio = (nombreServicio) => {
     if (!usuario) {
