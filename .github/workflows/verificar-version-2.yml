@@ -1,4 +1,4 @@
-name: Verificar versión 2
+name: Verificar version 2
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Ejecutar pruebas unitarias
-       run: npm run test:karma
+        run: npm run test:karma
 
-      - name: Comprobar compilación
+      - name: Comprobar compilacion
         run: npm run build
