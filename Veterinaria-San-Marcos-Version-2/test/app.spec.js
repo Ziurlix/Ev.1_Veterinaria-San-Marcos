@@ -134,7 +134,7 @@ describe('Pruebas unitarias - Veterinaria San Marcos', () => {
 
     const botonCancelar = await screen.findByRole(
       'button',
-      { name: 'Cancelar cita' }
+      { name: /Cancelar cita/ }
     );
 
     fireEvent.click(botonCancelar);
@@ -156,7 +156,7 @@ describe('Pruebas unitarias - Veterinaria San Marcos', () => {
     aceptarTerminos = true
   } = {}) {
     fireEvent.change(
-      await screen.findByPlaceholderText('Ej: Juan Pérez'),
+      await screen.findByPlaceholderText('Ej.: Juan Pérez'),
       { target: { value: nombre } }
     );
 
@@ -166,7 +166,7 @@ describe('Pruebas unitarias - Veterinaria San Marcos', () => {
     );
 
     fireEvent.change(
-      screen.getByPlaceholderText('Ej: 912345678'),
+      screen.getByPlaceholderText('Ej.: 912345678'),
       { target: { value: telefono } }
     );
 
@@ -290,11 +290,9 @@ describe('Pruebas unitarias - Veterinaria San Marcos', () => {
     ).toBeTruthy();
   });
 
-  it('10. Guarda al usuario y notifica el registro exitoso', async () => {
+  it('10. Notifica a App.js el nuevo usuario y cierra el formulario si confirma éxito', async () => {
     const cerrarModal = jasmine.createSpy('cerrarModal');
-    const registroExitoso = jasmine.createSpy(
-      'registroExitoso'
-    );
+    const registroExitoso = jasmine.createSpy('registroExitoso').and.returnValue(true);
 
     render(
       <RegistrationForm
@@ -305,29 +303,38 @@ describe('Pruebas unitarias - Veterinaria San Marcos', () => {
     );
 
     await completarRegistro();
+    fireEvent.click(screen.getByRole('button', { name: 'Crear cuenta' }));
 
-    fireEvent.click(
-      screen.getByRole('button', {
-        name: 'Crear cuenta'
-      })
-    );
-
-    const usuarioGuardado = JSON.parse(
-      localStorage.getItem('usuarioVeterinaria')
-    );
-
-    expect(usuarioGuardado).toEqual({
+    expect(registroExitoso).toHaveBeenCalledWith({
       nombre: 'Cristian Rain',
       correo: 'cristian@example.com',
       telefono: '912345678',
       password: 'secreto123'
     });
-
-    expect(
-      registroExitoso
-    ).toHaveBeenCalledWith(usuarioGuardado);
-
     expect(cerrarModal).toHaveBeenCalled();
+    // El componente de formulario delega el almacenamiento a App.js.
+    expect(localStorage.getItem('usuarioVeterinaria')).toBeNull();
+  });
+
+  it('11. Mantiene el formulario abierto si App.js no confirma el registro', async () => {
+    const cerrarModal = jasmine.createSpy('cerrarModal');
+    const registroExitoso = jasmine.createSpy('registroExitoso').and.returnValue(false);
+
+    render(
+      <RegistrationForm
+        show={true}
+        handleClose={cerrarModal}
+        onRegistroExitoso={registroExitoso}
+      />
+    );
+
+    await completarRegistro();
+    fireEvent.click(screen.getByRole('button', { name: 'Crear cuenta' }));
+
+    expect(await screen.findByText(
+      'No se pudo guardar la cuenta. Inténtalo nuevamente.'
+    )).toBeTruthy();
+    expect(cerrarModal).not.toHaveBeenCalled();
   });
 
 });
