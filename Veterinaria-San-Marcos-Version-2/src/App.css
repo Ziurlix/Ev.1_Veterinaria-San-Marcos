@@ -1,11 +1,10 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 84px;
 }
 
 body {
@@ -206,4 +205,82 @@ footer {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(18, 62, 50, 0.15);
+}
+
+
+/* Accesibilidad: foco de teclado visible y contraste consistente. */
+:focus-visible {
+    outline: 3px solid #e0a52b;
+    outline-offset: 3px;
+}
+
+/* Adaptación a tablets y teléfonos. */
+@media (max-width: 991.98px) {
+    #inicio {
+        padding: 58px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero-video {
+        height: 320px;
+    }
+
+    #nosotros,
+    #servicios,
+    #contacto,
+    #ubicacion {
+        padding: 56px 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #inicio {
+        padding: 42px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-video {
+        height: 240px;
+        border-radius: 14px;
+    }
+
+    .section-title {
+        margin-bottom: 28px;
+    }
+
+    .contact-card {
+        padding: 22px 16px;
+    }
+
+    .service-card .card-body {
+        padding: 20px;
+    }
+
+    .mapa-container iframe {
+        height: 260px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .service-card:hover {
+        transform: none;
+    }
 }

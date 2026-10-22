@@ -61,6 +61,7 @@ function App() {
   const [loginError, setLoginError] = useState('');
 
   const [servicioSeleccionado, setServicioSeleccionado] = useState('');
+  const [categoriaServicio, setCategoriaServicio] = useState('');
   const [mascota, setMascota] = useState('');
   const [tipoMascota, setTipoMascota] = useState('');
   const [fecha, setFecha] = useState('');
@@ -69,7 +70,7 @@ function App() {
   const [citas, setCitas] = useState([]);
   const [citaError, setCitaError] = useState('');
   const [mensajeCitas, setMensajeCitas] = useState('');
-  const [fechaMinima] = useState(fechaLocalActual);
+  const fechaMinima = fechaLocalActual();
 
   useEffect(() => {
     // Solo restauramos una sesión activa; una cuenta registrada no inicia sesión sola.
@@ -101,7 +102,9 @@ function App() {
 
     const correoIngresado = loginCorreo.trim().toLowerCase();
     const cuentaGuardada = leerJSON(localStorage, CLAVE_USUARIO, null);
-    const correoGuardado = cuentaGuardada?.correo?.trim().toLowerCase();
+    const correoGuardado = typeof cuentaGuardada?.correo === 'string'
+      ? cuentaGuardada.correo.trim().toLowerCase()
+      : '';
 
     if (
       !cuentaGuardada ||
@@ -132,28 +135,47 @@ function App() {
     setUsuario(null);
     setShowCitasModal(false);
     setShowFormCita(false);
+    setShowRegistro(false);
+    limpiarFormularioCita();
     setLoginCorreo('');
     setLoginPass('');
     setLoginError('');
   };
 
   const handleRegistroExitoso = (nuevoUsuario) => {
-    if (!nuevoUsuario || !nuevoUsuario.correo) {
-      setShowRegistro(false);
-      return;
+    if (
+      !nuevoUsuario ||
+      typeof nuevoUsuario.correo !== 'string' ||
+      !nuevoUsuario.correo.trim() ||
+      typeof nuevoUsuario.password !== 'string' ||
+      !nuevoUsuario.password
+    ) {
+      setMensajeCitas('No se pudo completar el registro. Revisa los datos e inténtalo nuevamente.');
+      return false;
     }
 
-    // Conservamos la cuenta para futuros inicios de sesión y separamos la sesión activa.
-    const cuentaGuardada = guardarJSON(localStorage, CLAVE_USUARIO, nuevoUsuario);
-    const sesionGuardada = iniciarSesionCon(nuevoUsuario);
+    const cuenta = {
+      nombre: typeof nuevoUsuario.nombre === 'string' ? nuevoUsuario.nombre.trim() : '',
+      correo: nuevoUsuario.correo.trim().toLowerCase(),
+      telefono: typeof nuevoUsuario.telefono === 'string' ? nuevoUsuario.telefono.trim() : '',
+      password: nuevoUsuario.password
+    };
 
-    if (!cuentaGuardada) {
-      setMensajeCitas('La cuenta se creó en pantalla, pero el navegador no permitió guardar los datos para futuros inicios de sesión.');
+    // La cuenta debe guardarse correctamente antes de confirmar el registro.
+    if (!guardarJSON(localStorage, CLAVE_USUARIO, cuenta)) {
+      setMensajeCitas('No se pudo guardar la cuenta en este navegador. Inténtalo nuevamente.');
+      return false;
     }
 
-    if (sesionGuardada) {
-      setShowRegistro(false);
+    const sesionGuardada = iniciarSesionCon(cuenta);
+    if (!sesionGuardada) {
+      setMensajeCitas('La cuenta quedó registrada, pero no se pudo iniciar sesión automáticamente. Puedes iniciar sesión manualmente.');
+    } else {
+      setMensajeCitas('Registro completado correctamente.');
     }
+
+    // true significa que la cuenta se guardó, aunque haya que iniciar sesión manualmente.
+    return true;
   };
 
   const solicitarServicio = (nombreServicio) => {
@@ -166,11 +188,14 @@ function App() {
       return;
     }
 
-    setServicioSeleccionado(nombreServicio || '');
+    // Las tarjetas representan categorías; el usuario elige después el procedimiento exacto.
+    setCategoriaServicio(nombreServicio || '');
+    setServicioSeleccionado('');
     setShowFormCita(true);
   };
 
   const limpiarFormularioCita = () => {
+    setCategoriaServicio('');
     setServicioSeleccionado('');
     setMascota('');
     setTipoMascota('');
@@ -237,8 +262,21 @@ function App() {
   };
 
   const handleCancelarCita = (id) => {
-    const listaActualizada = citas.filter((cita) => cita.id !== id);
+    if (!usuario?.correo) return;
 
+    const correoActual = usuario.correo.trim().toLowerCase();
+    const citaObjetivo = citas.find((cita) => String(cita.id) === String(id));
+
+    if (
+      !citaObjetivo ||
+      typeof citaObjetivo.usuarioCorreo !== 'string' ||
+      citaObjetivo.usuarioCorreo.trim().toLowerCase() !== correoActual
+    ) {
+      setMensajeCitas('No se pudo cancelar la cita de esta cuenta.');
+      return;
+    }
+
+    const listaActualizada = citas.filter((cita) => String(cita.id) !== String(id));
     if (!guardarJSON(localStorage, CLAVE_CITAS, listaActualizada)) {
       setMensajeCitas('No se pudo actualizar la lista de citas. Inténtalo nuevamente.');
       return;
@@ -247,6 +285,16 @@ function App() {
     setCitas(listaActualizada);
     setMensajeCitas('La cita se quitó de la lista guardada en este navegador.');
   };
+
+  const correoUsuarioActual = typeof usuario?.correo === 'string'
+    ? usuario.correo.trim().toLowerCase()
+    : ''; 
+  const citasDelUsuario = correoUsuarioActual
+    ? citas.filter(
+        (cita) => typeof cita.usuarioCorreo === 'string' &&
+          cita.usuarioCorreo.trim().toLowerCase() === correoUsuarioActual
+      )
+    : [];
 
   return (
     <div className="App">
@@ -409,7 +457,7 @@ function App() {
         show={showFormCita}
         onHide={() => {
           setShowFormCita(false);
-          setCitaError('');
+          limpiarFormularioCita();
         }}
         centered
         size="lg"
@@ -418,6 +466,11 @@ function App() {
           <Modal.Title style={{ color: '#123e32', fontWeight: 700 }}>📅 Solicitar una cita</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {categoriaServicio && (
+            <Alert variant="info">
+              Categoría seleccionada: <strong>{categoriaServicio}</strong>. Elige el procedimiento específico en el campo Servicio.
+            </Alert>
+          )}
           {citaError && <Alert variant="danger">{citaError}</Alert>}
           <Form onSubmit={handleCrearCita}>
             <Row className="g-3">
@@ -526,6 +579,7 @@ function App() {
             </Row>
             <div className="d-flex justify-content-end mt-4 gap-2">
               <Button
+                type="button"
                 variant="secondary"
                 onClick={() => {
                   setShowFormCita(false);
@@ -544,7 +598,7 @@ function App() {
       <ShoppingCart
         show={showCitasModal}
         handleClose={() => setShowCitasModal(false)}
-        citas={citas}
+        citas={citasDelUsuario}
         onCancelarCita={handleCancelarCita}
       />
       <RegistrationForm
