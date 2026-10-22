@@ -71,8 +71,16 @@ export default function RegistrationForm({
     };
 
     try {
-      // App.js guarda la cuenta y administra la sesión.
-      onRegistroExitoso(nuevoUsuario);
+      // App.js es responsable de guardar la cuenta y administrar la sesión.
+      const registroCorrecto = onRegistroExitoso(nuevoUsuario);
+
+      if (registroCorrecto !== true) {
+        setError(
+          'No se pudo guardar la cuenta. Inténtalo nuevamente.'
+        );
+        return;
+      }
+
       limpiarFormulario();
       handleClose();
     } catch (err) {
