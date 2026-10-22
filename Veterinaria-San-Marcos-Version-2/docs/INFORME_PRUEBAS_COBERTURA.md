@@ -1,32 +1,67 @@
 # Informe de pruebas unitarias y cobertura
 
 **Proyecto:** Veterinaria San Marcos — Versión 2  
-**Herramientas:** Karma, Jasmine, Chrome Headless y React Testing Library.
+**Fecha de ejecución:** 22 de octubre de 2026
 
-## Estado de esta revisión
+## 1. Herramientas utilizadas
 
-La suite contiene 18 pruebas unitarias definidas. Los resultados de ejecución de esta revisión están pendientes de verificación.
+- Karma: ejecución de las pruebas.
+- Jasmine: definición de pruebas unitarias.
+- Chrome Headless: ejecución automatizada del navegador.
+- React Testing Library: interacción y comprobación de componentes.
+- GitHub Actions: ejecución automática de pruebas y compilación.
 
-El informe anterior registraba 17 pruebas exitosas y 0 fallidas, con 100 % de cobertura en los componentes evaluados. Esos resultados corresponden a una ejecución anterior y no se presentan como resultados confirmados de esta versión revisada.
+## 2. Resultado de la ejecución
 
-## Componentes cubiertos
+- Pruebas ejecutadas: 18.
+- Pruebas exitosas: 18.
+- Pruebas fallidas: 0.
+- Resultado: exitoso.
+
+La ejecución automatizada finalizó correctamente.
+La compilación de React también terminó sin errores.
+
+## 3. Cobertura de código
+
+Resultados obtenidos en la ejecución:
+
+- Sentencias: 90,90 % (60/66).
+- Ramas: 80,64 % (25/31).
+- Funciones: 88,88 % (16/18).
+- Líneas: 90,90 % (60/66).
+
+Estos porcentajes corresponden únicamente al código
+instrumentado por la configuración de cobertura.
+No representan el 100 % de toda la aplicación.
+
+## 4. Componentes evaluados
 
 - Navbar.js: navegación y acciones del menú.
-- ProductList.js: visualización de servicios y selección.
-- RegistrationForm.js: validación del registro y confirmación.
+- ProductList.js: visualización y selección de servicios.
+- RegistrationForm.js: validación del formulario de registro.
 - ShoppingCart.js: visualización de citas y solicitud de cancelación.
 
-## Ejecutar las pruebas
+## 5. Automatización
 
-Desde la carpeta raíz del proyecto:
+El flujo de GitHub Actions realiza los siguientes pasos:
 
-    npm install
-    npm test
+1. Descarga el repositorio.
+2. Configura Node.js.
+3. Instala las dependencias.
+4. Ejecuta las pruebas unitarias con Karma y Jasmine.
+5. Comprueba la compilación de React.
 
-Karma debe generar el reporte HTML en `coverage/html/index.html`.
+## 6. Limitaciones del prototipo
 
-Después de ejecutar las pruebas, actualiza este informe con los resultados reales.
+Las cuentas y las citas se almacenan en el navegador.
+La aplicación no utiliza actualmente un servidor de autenticación
+ni una base de datos para persistir estos datos.
 
-## Limitaciones
+Este proyecto corresponde a un prototipo frontend académico
+y no a un sistema listo para producción.
 
-La cobertura se limita a los archivos incluidos en la ejecución. Las cuentas y citas se guardan en el navegador; el prototipo no sustituye un sistema de autenticación seguro ni una base de datos.
+## 7. Reporte HTML
+
+El reporte HTML de cobertura se genera en:
+
+coverage/html/index.html
