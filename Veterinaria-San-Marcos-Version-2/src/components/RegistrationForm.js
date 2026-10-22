@@ -37,6 +37,7 @@ export default function RegistrationForm({
     const correoLimpio = correo.trim().toLowerCase();
     const telefonoLimpio = telefono.trim();
 
+    // 1. Comprobar que todos los campos estén completos.
     if (
       !nombreLimpio ||
       !correoLimpio ||
@@ -48,16 +49,27 @@ export default function RegistrationForm({
       return;
     }
 
+    // 2. Validar el formato del correo electrónico.
+    const formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!formatoCorreo.test(correoLimpio)) {
+      setError('Ingresa un correo electrónico válido.');
+      return;
+    }
+
+    // 3. Validar la longitud de la contraseña.
     if (password.length < 6) {
       setError('La contraseña debe tener al menos 6 caracteres.');
       return;
     }
 
+    // 4. Comprobar que ambas contraseñas coincidan.
     if (password !== confirmPassword) {
       setError('Las contraseñas no coinciden.');
       return;
     }
 
+    // 5. Comprobar la aceptación de los términos.
     if (!terminos) {
       setError('Debes aceptar los términos y condiciones.');
       return;
@@ -71,9 +83,10 @@ export default function RegistrationForm({
     };
 
     try {
-      // App.js es responsable de guardar la cuenta y administrar la sesión.
+      // App.js guarda la cuenta y administra la sesión.
       const registroCorrecto = onRegistroExitoso(nuevoUsuario);
 
+      // No cerrar el formulario si App.js no confirma el registro.
       if (registroCorrecto !== true) {
         setError(
           'No se pudo guardar la cuenta. Inténtalo nuevamente.'
@@ -85,6 +98,7 @@ export default function RegistrationForm({
       handleClose();
     } catch (err) {
       console.error('Error al registrar al usuario:', err);
+
       setError(
         'No se pudo completar el registro. Inténtalo nuevamente.'
       );
@@ -102,7 +116,10 @@ export default function RegistrationForm({
         style={{ backgroundColor: '#e8f5f1' }}
       >
         <Modal.Title
-          style={{ color: '#123e32', fontWeight: 700 }}
+          style={{
+            color: '#123e32',
+            fontWeight: 700
+          }}
         >
           🐾 Crear cuenta
         </Modal.Title>
@@ -115,9 +132,13 @@ export default function RegistrationForm({
           </Alert>
         )}
 
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="registroNombre">
+        <Form onSubmit={handleSubmit} noValidate>
+          <Form.Group
+            className="mb-3"
+            controlId="registroNombre"
+          >
             <Form.Label>Nombre completo</Form.Label>
+
             <Form.Control
               type="text"
               autoComplete="name"
@@ -129,8 +150,12 @@ export default function RegistrationForm({
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="registroCorreo">
+          <Form.Group
+            className="mb-3"
+            controlId="registroCorreo"
+          >
             <Form.Label>Correo electrónico</Form.Label>
+
             <Form.Control
               type="email"
               autoComplete="email"
@@ -142,8 +167,12 @@ export default function RegistrationForm({
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="registroTelefono">
+          <Form.Group
+            className="mb-3"
+            controlId="registroTelefono"
+          >
             <Form.Label>Número de teléfono</Form.Label>
+
             <Form.Control
               type="tel"
               autoComplete="tel"
@@ -155,8 +184,12 @@ export default function RegistrationForm({
             />
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="registroPassword">
+          <Form.Group
+            className="mb-3"
+            controlId="registroPassword"
+          >
             <Form.Label>Contraseña</Form.Label>
+
             <Form.Control
               type="password"
               autoComplete="new-password"
@@ -173,6 +206,7 @@ export default function RegistrationForm({
             controlId="registroConfirmarPassword"
           >
             <Form.Label>Confirmar contraseña</Form.Label>
+
             <Form.Control
               type="password"
               autoComplete="new-password"
@@ -184,7 +218,10 @@ export default function RegistrationForm({
             />
           </Form.Group>
 
-          <Form.Group className="mb-4" controlId="registroTerminos">
+          <Form.Group
+            className="mb-4"
+            controlId="registroTerminos"
+          >
             <Form.Check
               type="checkbox"
               label="Acepto los términos y condiciones."
