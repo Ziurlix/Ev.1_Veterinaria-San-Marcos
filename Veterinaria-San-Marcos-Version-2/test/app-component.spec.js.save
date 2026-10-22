@@ -1,0 +1,290 @@
+import React from 'react';
+import {
+  render,
+  screen,
+  fireEvent,
+  cleanup
+} from '@testing-library/react';
+
+import App from '../src/App';
+
+afterEach(() => {
+  cleanup();
+  localStorage.clear();
+});
+
+describe('Pruebas de integración del componente App', () => {
+
+  const usuarioPrueba = {
+    nombre: 'Cristian Rain',
+    correo: 'cristian@example.com',
+    telefono: '912345678',
+    password: 'secreto123'
+  };
+
+  it('18. Muestra la portada de Veterinaria San Marcos', () => {
+    render(<App />);
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Cuidamos a quienes más quieres/
+      })
+    ).toBeTruthy();
+  });
+
+  it('19. Abre el login al solicitar una cita sin iniciar sesión', () => {
+    render(<App />);
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Solicitar una cita'
+      })
+    );
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Iniciar sesión/
+      })
+    ).toBeTruthy();
+  });
+
+  it('20. Muestra un error con credenciales incorrectas', () => {
+    render(<App />);
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Iniciar sesión'
+      })
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText('ejemplo@correo.cl'),
+      {
+        target: {
+          value: 'incorrecto@example.com'
+        }
+      }
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText('Ingresa tu contraseña'),
+      {
+        target: {
+          value: 'incorrecta123'
+        }
+      }
+    );
+
+    const botonesLogin = screen.getAllByRole('button', {
+      name: 'Iniciar sesión'
+    });
+
+    fireEvent.click(
+      botonesLogin[botonesLogin.length - 1]
+    );
+
+    expect(
+      screen.getByText(
+        'Credenciales incorrectas o usuario no registrado.'
+      )
+    ).toBeTruthy();
+  });
+
+  it('21. Permite iniciar sesión con credenciales registradas', async () => {
+    render(<App />);
+
+    localStorage.setItem(
+      'usuarioVeterinaria',
+      JSON.stringify(usuarioPrueba)
+    );
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Iniciar sesión'
+      })
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText('ejemplo@correo.cl'),
+      {
+        target: {
+          value: usuarioPrueba.correo
+        }
+      }
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText('Ingresa tu contraseña'),
+      {
+        target: {
+          value: usuarioPrueba.password
+        }
+      }
+    );
+
+    const botonesLogin = screen.getAllByRole('button', {
+      name: 'Iniciar sesión'
+    });
+
+    fireEvent.click(
+      botonesLogin[botonesLogin.length - 1]
+    );
+
+    expect(
+      await screen.findByRole('button', {
+        name: /Mis Citas/
+      })
+    ).toBeTruthy();
+  });
+
+  it('22. Abre el login al seleccionar un servicio sin sesión', () => {
+    render(<App />);
+
+    const botonesServicio = screen.getAllByRole('button', {
+      name: 'Solicitar cita'
+    });
+
+    fireEvent.click(botonesServicio[0]);
+
+    expect(
+      screen.getByRole('heading', {
+        name: /Iniciar sesión/
+      })
+    ).toBeTruthy();
+  });
+
+  it('23. Guarda una cita al completar el formulario', async () => {
+    render(<App />);
+
+    // Simular un usuario registrado y abrir el login.
+    localStorage.setItem(
+      'usuarioVeterinaria',
+      JSON.stringify(usuarioPrueba)
+    );
+
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Iniciar sesión'
+      })
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText('ejemplo@correo.cl'),
+      {
+        target: {
+          value: usuarioPrueba.correo
+        }
+      }
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText('Ingresa tu contraseña'),
+      {
+        target: {
+          value: usuarioPrueba.password
+        }
+      }
+    );
+
+    const botonesLogin = screen.getAllByRole('button', {
+      name: 'Iniciar sesión'
+    });
+
+    fireEvent.click(
+      botonesLogin[botonesLogin.length - 1]
+    );
+
+    await screen.findByRole('button', {
+      name: /Mis Citas/
+    });
+
+    // Abrir el formulario de cita.
+    fireEvent.click(
+      screen.getByRole('button', {
+        name: 'Solicitar una cita'
+      })
+    );
+
+    // Completar los campos.
+    fireEvent.change(
+      screen.getByPlaceholderText('Ej: Luna'),
+      {
+        target: {
+          value: 'Luna'
+        }
+      }
+    );
+
+    const selectores = screen.getAllByRole('combobox');
+
+    fireEvent.change(selectores[0], {
+      target: {
+        value: 'Perro'
+      }
+    });
+
+    fireEvent.change(selectores[1], {
+      target: {
+        value: 'Vacuna antirrábica ($12.000)'
+      }
+    });
+
+    fireEvent.change(
+      document.querySelector('input[type="date"]'),
+      {
+        target: {
+          value: '2026-11-15'
+        }
+      }
+    );
+
+    fireEvent.change(
+      document.querySelector('input[type="time"]'),
+      {
+        target: {
+          value: '10:30'
+        }
+      }
+    );
+
+    fireEvent.change(
+      screen.getByPlaceholderText(
+        'Describe brevemente el motivo'
+      ),
+      {
+        target: {
+          value: 'Control anual'
+        }
+      }
+    );
+
+    spyOn(window, 'alert').and.stub();
+
+    const botonesCita = screen.getAllByRole('button', {
+      name: 'Solicitar cita'
+    });
+
+    fireEvent.click(
+      botonesCita[botonesCita.length - 1]
+    );
+
+    const citasGuardadas = JSON.parse(
+      localStorage.getItem('citasVeterinaria')
+    );
+
+    expect(citasGuardadas.length).toBe(1);
+
+    expect(citasGuardadas[0]).toEqual(
+      jasmine.objectContaining({
+        mascota: 'Luna',
+        tipoMascota: 'Perro',
+        servicio: 'Vacuna antirrábica ($12.000)',
+        fecha: '2026-11-15',
+        hora: '10:30',
+        motivo: 'Control anual',
+        estado: 'Pendiente'
+      })
+    );
+  });
+
+});
