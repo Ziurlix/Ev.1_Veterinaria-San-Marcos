@@ -1,20 +1,32 @@
 # Informe de pruebas unitarias y cobertura
 
-Proyecto: Veterinaria San Marcos
-Fecha: 22 de octubre de 2026
+**Proyecto:** Veterinaria San Marcos — Versión 2  
+**Herramientas:** Karma, Jasmine, Chrome Headless y React Testing Library.
 
-Herramientas: Karma, Jasmine, Chrome Headless y React Testing Library.
+## Estado de esta revisión
 
-Resultado: 17 pruebas exitosas de 17 ejecutadas; 0 fallidas.
+La suite contiene 18 pruebas unitarias definidas. Los resultados de ejecución de esta revisión están pendientes de verificación.
 
-Cobertura de los componentes evaluados:
-- Sentencias: 100 % (41/41)
-- Ramas: 100 % (19/19)
-- Funciones: 100 % (15/15)
-- Líneas: 100 % (41/41)
+El informe anterior registraba 17 pruebas exitosas y 0 fallidas, con 100 % de cobertura en los componentes evaluados. Esos resultados corresponden a una ejecución anterior y no se presentan como resultados confirmados de esta versión revisada.
 
-Componentes cubiertos: Navbar.js, ProductList.js, RegistrationForm.js y ShoppingCart.js.
+## Componentes cubiertos
 
-Alcance: estos porcentajes corresponden únicamente a los componentes incluidos en las pruebas. No representan el 100 % de toda la aplicación.
+- Navbar.js: navegación y acciones del menú.
+- ProductList.js: visualización de servicios y selección.
+- RegistrationForm.js: validación del registro y confirmación.
+- ShoppingCart.js: visualización de citas y solicitud de cancelación.
 
-Informe HTML: coverage/html/index.html.
+## Ejecutar las pruebas
+
+Desde la carpeta raíz del proyecto:
+
+    npm install
+    npm test
+
+Karma debe generar el reporte HTML en `coverage/html/index.html`.
+
+Después de ejecutar las pruebas, actualiza este informe con los resultados reales.
+
+## Limitaciones
+
+La cobertura se limita a los archivos incluidos en la ejecución. Las cuentas y citas se guardan en el navegador; el prototipo no sustituye un sistema de autenticación seguro ni una base de datos.
