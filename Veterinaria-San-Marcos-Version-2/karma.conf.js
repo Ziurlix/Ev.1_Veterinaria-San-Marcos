@@ -1,16 +1,12 @@
 module.exports = function (config) {
   config.set({
     frameworks: ['jasmine'],
-
     files: ['test/**/*.spec.js'],
-
     preprocessors: {
       'test/**/*.spec.js': ['webpack']
     },
-
     webpack: {
       mode: 'development',
-
       module: {
         rules: [
           {
@@ -21,21 +17,10 @@ module.exports = function (config) {
               options: {
                 presets: [
                   '@babel/preset-env',
-                  [
-                    '@babel/preset-react',
-                    { runtime: 'automatic' }
-                  ]
+                  ['@babel/preset-react', { runtime: 'automatic' }]
                 ],
                 plugins: [
-                  [
-                    'istanbul',
-                    {
-                      exclude: [
-                        '**/*.spec.js',
-                        '**/test/**'
-                      ]
-                    }
-                  ]
+                  ['istanbul', { exclude: ['**/*.spec.js', '**/test/**'] }]
                 ]
               }
             }
@@ -46,39 +31,25 @@ module.exports = function (config) {
           }
         ]
       },
-
       resolve: {
         extensions: ['.js', '.jsx']
       }
     },
-
     browsers: ['ChromeHeadlessNoSandbox'],
-
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: [
-          '--no-sandbox',
-          '--disable-dev-shm-usage'
-        ]
+        flags: ['--no-sandbox', '--disable-dev-shm-usage']
       }
     },
-
     reporters: ['progress', 'coverage'],
-
     coverageReporter: {
       dir: 'coverage',
       reporters: [
-        {
-          type: 'html',
-          subdir: 'html'
-        },
-        {
-          type: 'text-summary'
-        }
+        { type: 'html', subdir: 'html' },
+        { type: 'text-summary' }
       ]
     },
-
     singleRun: true
   });
 };

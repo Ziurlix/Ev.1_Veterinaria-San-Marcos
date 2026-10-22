@@ -1,52 +1,43 @@
 # Veterinaria San Marcos — Versión 2
 
 ## Descripción
-Esta versión contiene el frontend desarrollado con React para el proyecto Veterinaria San Marcos. Incluye componentes para la navegación, visualización de productos, registro de usuarios y carrito de compras.
+Prototipo frontend de Veterinaria San Marcos, desarrollado con React y Bootstrap. Permite navegar por los servicios, registrar una cuenta de demostración, iniciar y cerrar sesión, y crear, consultar y cancelar solicitudes de citas.
 
-## Tecnologías utilizadas
+## Tecnologías
 - React y JavaScript.
-- Bootstrap y diseño adaptable (responsive).
+- React Bootstrap y Bootstrap 5 para componentes y diseño adaptable.
 - Jasmine y Karma para pruebas unitarias.
-- React Testing Library.
+- React Testing Library para consultar e interactuar con los componentes durante las pruebas.
 
-## Instalación y ejecución
+## Requisitos
+- Node.js y npm instalados.
+- Google Chrome o Chromium disponible para ejecutar las pruebas con Karma.
 
-1. Instalar Node.js.
-2. Abrir una terminal en la carpeta del proyecto.
-3. Instalar las dependencias:
+## Instalación
+Desde la carpeta raíz del proyecto:
 
-   npm install
+```bash
+npm install
+```
 
-4. Iniciar la aplicación:
+## Ejecutar la aplicación
 
-   npm start
+```bash
+npm start
+```
 
-## Pruebas y cobertura
+La aplicación estará disponible de forma predeterminada en `http://localhost:3000`.
 
-Se ejecutaron 17 pruebas unitarias:
-- 17 pruebas exitosas.
-- 0 pruebas fallidas.
+## Ejecutar las pruebas unitarias
 
-Los componentes evaluados obtuvieron:
-- Sentencias: 100 %.
-- Ramas: 100 %.
-- Funciones: 100 %.
-- Líneas: 100 %.
+```bash
+npm test
+```
 
-Estos porcentajes corresponden únicamente a los componentes incluidos en las pruebas, no a toda la aplicación.
+Esto ejecuta Karma con Jasmine en Chrome Headless y genera el reporte de cobertura en `coverage/html/index.html`.
 
-Componentes evaluados:
-- Navbar.js
-- ProductList.js
-- RegistrationForm.js
-- ShoppingCart.js
+## Límites del prototipo
+Las cuentas y las citas se almacenan en el navegador mediante `localStorage` y `sessionStorage`. Las contraseñas del prototipo se guardan en texto legible en `localStorage`, por lo que no debe usarse con datos reales ni desplegarse como sistema de producción sin un backend, autenticación segura y almacenamiento apropiado.
 
-## Documentación
-
-El informe detallado está disponible en:
-
-docs/INFORME_PRUEBAS_COBERTURA.md
-
-El reporte HTML de cobertura se encuentra en:
-
-coverage/html/index.html
+## Documentación de pruebas
+Consulta `docs/INFORME_PRUEBAS_COBERTURA.md`. Los resultados deben actualizarse con una ejecución del código de esta revisión antes de entregar el informe como resultado definitivo.
